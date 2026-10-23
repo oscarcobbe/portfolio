@@ -334,3 +334,86 @@ footer a { color: var(--warm-mut); }
 .ground .fshead h3 { color: var(--warm); }
 .ground .fshead span { color: var(--gold); }
 .ground .fshead p { color: var(--warm-mut); }
+
+/* Writing */
+.wlist { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.wlist a { display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 16px 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; text-decoration: none; box-shadow: var(--shadow); transition: transform .15s; }
+.wlist a:hover { transform: translateY(-2px); }
+.wlist b { font: 500 1.06rem/1.3 var(--serif); }
+.wlist span { font: 500 .7rem/1.4 var(--mono); color: var(--mut); overflow-wrap: anywhere; }
+.wlist small { font: 500 .7rem/1.3 var(--mono); color: var(--accent); }
+.pills a.pill { text-decoration: none; }
+.pills a.pill:hover { border-color: var(--accent); color: var(--ink); }
+@media (max-width: 400px) { .wlist { grid-template-columns: 1fr; } }
+
+/* Documents */
+.docs { display: grid; gap: 26px; }
+.doc { display: grid; grid-template-columns: 300px 1fr; gap: 30px; background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 26px; box-shadow: var(--shadow); }
+.dcover { display: block; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 40px -20px rgba(6,6,42,.5), 0 0 0 1px var(--line); align-self: start; transition: transform .15s; }
+.dcover:hover { transform: translateY(-3px) rotate(-.4deg); }
+.dbody { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.dbody .kicker { font: 500 .74rem/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.dbody h3 { font-size: 1.7rem; }
+.dbody p { margin: 0; color: var(--mut); max-width: 70ch; }
+.dbody .go { font-weight: 600; color: var(--accent); text-decoration: none; }
+.dstrip { display: flex; gap: 10px; overflow-x: auto; padding: 8px 2px 10px; margin-top: 6px; scrollbar-width: thin; }
+.dstrip a { flex: none; width: 150px; border-radius: 6px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 8px 18px -10px rgba(6,6,42,.4); }
+.dgrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+.dz { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+.dz.wide { grid-column: span 6; }
+.dz.square { grid-column: span 2; }
+.dz.still { grid-column: span 2; }
+.dz img { width: 100%; }
+.dz figcaption { padding: 12px 16px 14px; display: flex; flex-direction: column; gap: 3px; }
+.dz b { font: 500 1.02rem/1.3 var(--serif); }
+.dz span { font: 500 .7rem/1.3 var(--mono); color: var(--accent); }
+@media (max-width: 860px) { .doc { grid-template-columns: 1fr; } .dcover { max-width: 320px; } .dz.square, .dz.still { grid-column: span 3; } }
+@media (max-width: 520px) { .dz.square, .dz.still { grid-column: span 6; } .doc { padding: 18px; } }
+
+/* Timeline and chart */
+.tlgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.chartbox { position: sticky; top: 90px; }
+.chart { width: 100%; height: auto; display: block; margin-top: 6px; }
+.chart .bar { fill: var(--navy-2); }
+.chart .bar.hi { fill: var(--gold); }
+.chart .axis { stroke: var(--line); stroke-width: 1.5; }
+.chart .val { font: 600 13px var(--sans); fill: var(--ink); }
+.chart .mon { font: 500 12px var(--mono); fill: var(--mut); }
+@media (prefers-color-scheme: dark) { .chart .bar { fill: #3a3a8a; } }
+.tl { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+.tl li { position: relative; padding: 0 0 18px 24px; }
+.tl li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--paper); border: 2px solid var(--gold); }
+.tl .when { font: 500 .74rem/1.3 var(--mono); color: var(--accent); letter-spacing: .06em; text-transform: uppercase; }
+.tl p { margin: 3px 0 0; font-size: .97rem; }
+@media (max-width: 900px) { .tlgrid { grid-template-columns: 1fr; } .chartbox { position: static; } }
+
+/* Everything else */
+.more3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.more3 a { display: flex; flex-direction: column; gap: 10px; padding: 28px; border-radius: 22px; text-decoration: none; color: var(--warm); background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); transition: transform .15s, background .15s; }
+.more3 a:hover { transform: translateY(-3px); background: rgba(255,255,255,.09); }
+.more3 b { font: 500 2.6rem/1 var(--serif); color: var(--gold-2); }
+.more3 h3 { font-size: 1.5rem; }
+.more3 p { margin: 0; color: var(--warm-mut); font-size: .95rem; }
+.more3 span { margin-top: auto; font-weight: 600; color: var(--gold); }
+@media (max-width: 860px) { .more3 { grid-template-columns: 1fr; } }
+
+/* System diagrams */
+.sysfeature, .feature.sysfeature { grid-template-columns: 1fr; gap: 22px; }
+.sysfeature > div:first-child { max-width: 70ch; }
+.sysbox { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 10px 6px; box-shadow: var(--shadow); overflow-x: auto; }
+.sysmap { display: block; width: 100%; min-width: 700px; height: auto; }
+.sysmap .colh { font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; fill: var(--accent); }
+.sysmap .node rect { stroke-width: 1.2; }
+.sysmap .node.person rect { fill: var(--paper); stroke: var(--line); }
+.sysmap .node.app rect { fill: var(--navy-1); stroke: var(--navy-1); }
+.sysmap .node.svc rect { fill: var(--card); stroke: var(--line); }
+.sysmap .nt { font: 600 13.5px var(--sans); fill: var(--ink); }
+.sysmap .ns { font: 400 11px var(--sans); fill: var(--mut); }
+.sysmap .node.app .nt { fill: #f7f4ec; }
+.sysmap .node.app .ns { fill: #c9c5d8; }
+.sysmap .edge { fill: none; stroke: var(--gold); stroke-width: 1.6; opacity: .85; }
+.sysmap .ahead { fill: var(--gold); }
+.sysmap .elab rect { fill: var(--card); stroke: var(--line); }
+.sysmap .elab text { font: 500 10.5px var(--sans); fill: var(--ink); }
+@media (prefers-color-scheme: dark) { .sysmap .node.app rect { fill: #24246a; stroke: #3a3a8a; } }
+@media (min-width: 760px) { .sysfeature .fig figcaption { display: none; } }

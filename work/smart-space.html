@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Space | Oscar Cobbe</title>
+<meta name="description" content="Case study: the website, checkout, CRM, Google Calendar bookings, home-network service and Google Ads I built and run for Smart Space, a home security installer in Dublin and Leinster.">
+<meta name="theme-color" content="#06062a">
+<meta property="og:title" content="Smart Space | Oscar Cobbe">
+<meta property="og:description" content="The shop, the CRM and the calendar behind smart-space.ie.">
+<meta property="og:image" content="https://oscarcobbe.fourwindsdigital.com/img/shots/ss-home.jpg">
+<meta property="og:url" content="https://oscarcobbe.fourwindsdigital.com/work/smart-space">
+<link rel="canonical" href="https://oscarcobbe.fourwindsdigital.com/work/smart-space">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the case study</a>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">OC</span>Oscar Cobbe</a>
+    <ul>
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#films">Films</a></li>
+      <li><a href="/#how">How I work</a></li>
+      <li><a href="/#experience">Experience</a></li>
+    </ul>
+    <a class="cta" href="mailto:oscar@fourwindsdigital.com">Email me</a>
+  </div>
+</nav>
+
+<header class="ground cs-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="/#work">← All work</a></div>
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Case study · Home security installer</p>
+        <h1>The shop, the CRM and <em>the calendar</em> behind Smart Space.</h1>
+        <p class="lede">Smart Space installs smart doorbells and security cameras across Dublin and Leinster. I built and run the systems the business works from: the website and checkout, the owner's CRM, bookings on his Google Calendar, a new home-network service, and the Google Ads that bring the work in.</p>
+      </div>
+      <ul class="facts">
+        <li><b>My role</b><span>Chief Operations Officer. I built the systems and run them.</span></li>
+        <li><b>Built</b><span>2026, and still changing every week</span></li>
+        <li><b>Stack</b><span>Next.js, TypeScript, Stripe, Supabase, Resend, Twilio, Google Calendar API, Vercel</span></li>
+        <li><b>Live</b><span><a href="https://smart-space.ie" target="_blank" rel="noopener">smart-space.ie ↗</a></span></li>
+      </ul>
+    </div>
+    <div class="big">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>smart-space.ie</span></div><img src="/img/shots/ss-home.jpg" alt="The Smart Space homepage: Expertly Installed. Perfectly Secured."></div>
+      <div class="phone"><img src="/img/shots/ss-home-m.jpg" alt="The Smart Space homepage on a phone"></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="on-paper">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <span class="num">01</span>
+        <h3>Pay and book in one checkout</h3>
+        <p>Customers choose a doorbell, a camera or a bundle, pay by card and pick their installation slot in the same checkout. The slots come from the owner's own calendar, so what the customer sees is what he has free.</p>
+        <ul>
+          <li>Installation for Ring, Eufy, Nest, Tapo and Aosu devices, singly or in bundles</li>
+          <li>Installation-only bookings and free home consultations</li>
+          <li>86 pages, including guides for people choosing a system</li>
+        </ul>
+      </div>
+      <figure class="fig">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span>smart-space.ie/services/doorbell</span></div><img src="/img/shots/ss-doorbell.jpg" alt="The video doorbell page" loading="lazy"></div>
+      </figure>
+    </div>
+
+    <div class="feature flip">
+      <div>
+        <span class="num">02</span>
+        <h3>Bookings on the owner's Google Calendar</h3>
+        <p>On 20 October 2026 both of the owner's websites moved from Calendly to a booking engine I built. A booking is an event in his calendar: he moves it by dragging it, and the CRM and the reminders follow, because they read the calendar itself.</p>
+        <ul>
+          <li>Two customers can never hold the same slot, across both websites</li>
+          <li>Customers move or cancel from a signed link in their email</li>
+          <li>Tested live on the real calendar: three customers booked one slot at the same moment, one got it, two were told it was taken</li>
+        </ul>
+        <p style="margin-top:16px"><a href="https://github.com/oscarcobbe/booking-engine" target="_blank" rel="noopener" style="font-weight:600;color:var(--accent);text-decoration:none">The engine is open source: read the code ↗</a></p>
+      </div>
+      <figure class="fig">
+        <div class="tile" style="box-shadow:var(--shadow-lg)">
+          <div class="pic code" style="aspect-ratio:auto;padding:22px 24px;font-size:.78rem;line-height:1.75">
+<span class="c">$ npm test</span><br>
+<span class="s">ok</span>&nbsp; two bookings racing for one slot: exactly one wins<br>
+<span class="s">ok</span>&nbsp; a cancelled slot is offered again<br>
+<span class="s">ok</span>&nbsp; after the host moves a booking away, its old slot is offered<br>
+<span class="s">ok</span>&nbsp; a booking written but its answer timed out: reported booked, once<br>
+<span class="s">ok</span>&nbsp; five rate-limit refusals in a row are waited out, and it books<br>
+<span class="s">ok</span>&nbsp; 25 customers at one slot at the same instant: exactly one booked<br>
+<span class="s">ok</span>&nbsp; the same paid order arriving twice is one booking<br>
+<span class="s">ok</span>&nbsp; a lock left by a crashed change is taken over<br>
+<span class="c">…</span><br>
+<span class="k">all passed</span> <span class="c">(87 checks)</span>
+          </div>
+        </div>
+        <figcaption>Output from the engine's test suite, which runs it against a fake Google Calendar that injects outages, timeouts, rate limits and lost answers.</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature">
+      <div>
+        <span class="num">03</span>
+        <h3>A CRM for the owner</h3>
+        <p>Every enquiry and order in one place: where it came from, what was bought, when the visit is, and whether Google Ads counted the sale. Customer emails wait for the owner's sign-off before they go.</p>
+        <ul>
+          <li>Each customer's orders, visit, notes and next steps</li>
+          <li>Payment links sent from the customer's record</li>
+          <li>An enquiry can be marked straight from its email</li>
+        </ul>
+      </div>
+      <figure class="fig">
+        <div class="shot"><img src="/img/frames/crm-order.jpg" alt="A customer's record in the CRM: a paid order, the booked installation, and a note that Google Ads counted the sale" loading="lazy"><span class="tag-sample">Sample data</span></div>
+        <figcaption>A customer record, from the film <a href="/#films">What we do at FourWinds</a>.</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature flip">
+      <div>
+        <span class="num">04</span>
+        <h3>The order flow runs itself</h3>
+        <p>When a customer pays, the rest happens in order without anyone touching it: the visit is booked, the customer record is made, the confirmation email goes out, the sale goes back to Google Ads. The reminder before the visit and the review request after it follow, once the owner has signed those emails off.</p>
+      </div>
+      <figure class="fig">
+        <div class="shot"><img src="/img/frames/automation-flow.jpg" alt="The order flow: installation booked, customer record, sale sent to Google Ads, order confirmed, and the confirmation email on the customer's phone" loading="lazy"><span class="tag-sample">Sample data</span></div>
+      </figure>
+    </div>
+
+    <div class="feature">
+      <div>
+        <span class="num">05</span>
+        <h3>A new service: home network diagnosis</h3>
+        <p>Launched on 29 September 2026. People with slow Wi-Fi can test it themselves room by room, read plain-English guides, or book a €395 Home Network Assessment, which is measured, trialled for three days, then fixed.</p>
+        <ul>
+          <li>A free Wi-Fi speed test, run beside the router and in the problem room, graded green, amber or red</li>
+          <li>A Home Network Help Centre of guides</li>
+          <li>Each assessment's monitoring readings land in a portal inside the CRM</li>
+        </ul>
+      </div>
+      <figure class="fig">
+        <div class="pair">
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>smart-space.ie/wifi-check</span></div><img src="/img/shots/ss-wifi.jpg" alt="The free room-by-room Wi-Fi speed test" loading="lazy"></div>
+          <div class="phone"><img src="/img/shots/ss-wifi-m.jpg" alt="The Wi-Fi check on a phone" loading="lazy"></div>
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature flip">
+      <div>
+        <span class="num">06</span>
+        <h3>Google Ads that count real sales</h3>
+        <p>I run the Google Ads account: the campaigns, conversion tracking with consent mode, and sales uploaded back to Google from the CRM. Each enquiry in the CRM says whether Google counted it, and the bidding learns from real sales.</p>
+      </div>
+      <figure class="fig">
+        <div class="shot"><img src="/img/frames/report-chart.jpg" alt="Ad spend and sales traced to ads, week by week, with a table by campaign" loading="lazy"><span class="tag-sample">Sample data</span></div>
+        <figcaption>The reporting view, with sample figures.</figcaption>
+      </figure>
+    </div>
+
+    <div class="callout"><p><b>How it stays working.</b> 41 automated checks run before every deploy, covering consent and conversion tracking, booking dates, the CRM's wording, the product feed and more. If one fails, the deploy stops.</p></div>
+
+    <div class="next">
+      <a href="/#work">← All work</a>
+      <a href="/work/smartcare-living" style="text-align:right"><small>Next case study</small>SmartCare <em>Living</em> →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="ground">
+  <footer>
+    <div class="wrap"><span>© 2026 Oscar Cobbe · <a href="mailto:oscar@fourwindsdigital.com">oscar@fourwindsdigital.com</a></span><span>Sample data is marked where it appears.</span></div>
+  </footer>
+</div>
+</body>
+</html>
